@@ -43,6 +43,7 @@ func TestMetrics_Add(t *testing.T) {
 			Total:     duration("50.005s"),
 			Mean:      duration("5.0005ms"),
 			P50:       duration("5.0005ms"),
+			P90:       duration("9.0005ms"),
 			P95:       duration("9.5005ms"),
 			P99:       duration("9.9005ms"),
 			Max:       duration("10ms"),
@@ -71,7 +72,7 @@ func TestMetrics_Add(t *testing.T) {
 	}
 }
 
-// https://github.com/tsenart/vegeta/issues/208
+// https://github.com/an63/vegeta/issues/208
 func TestMetrics_NoInfiniteRate(t *testing.T) {
 	t.Parallel()
 
@@ -83,7 +84,7 @@ func TestMetrics_NoInfiniteRate(t *testing.T) {
 	}
 }
 
-// https://github.com/tsenart/vegeta/pull/277
+// https://github.com/an63/vegeta/pull/277
 func TestMetrics_NonNilErrorsOnClose(t *testing.T) {
 	t.Parallel()
 
